@@ -1,0 +1,426 @@
+html {
+  height: -webkit-fill-available;
+  height:100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh !important;
+  min-height: -webkit-fill-available;
+  background-color: #171e31;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* header */
+
+header {
+  height: 70px;
+  background-color: #171e31;
+  border-bottom: 5px solid #E3983B;
+  box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+#header-bar {
+  height: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#nav-items {
+  display: flex;
+  column-gap: 7px;
+}
+
+#name-logo {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2.2rem;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+/* header end */
+
+main {
+  min-height: calc(100vh - 75px - 204px);
+}
+
+.card {
+  max-width: 900px;
+  margin: 4rem auto 4rem auto;
+  padding-left: 15px;
+  padding-right: 20px;
+}
+
+/* card-one start */
+
+#card-one {
+  column-gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+#row-gap {
+  row-gap: 10px;
+}
+
+#hey {
+  font-size: 1.8rem;
+}
+
+#cv-pic {
+  max-height: 275px; /* original-ratio: 393/337 **/
+  max-width: calc(275px * (337 / 393));
+  border-radius: 30px;
+  margin: auto;
+  width: 100%;
+
+}
+
+/* card-one end */
+
+/* card-two start */
+
+#card-two {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+#skills {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1d2e5c;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  flex-wrap: wrap;
+  row-gap: 5px;
+}
+
+.skills-subject {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.skills-col {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+}
+
+#programming-title, #web-title, #other-title {
+  color: #fbb000;
+  text-align: center;
+}
+
+#prog-list, #web-list, #other-list {
+  margin-inline-start: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.skills-subject > .fa-solid {
+  line-height: normal;
+}
+
+
+/* card-two end */
+
+/* card-three start */
+
+#card-three {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.sections-word {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+#projects-col {
+  row-gap: 30px;
+}
+
+.project {
+  display: flex;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #1d2e5c;
+  column-gap: 30px;
+}
+
+.project-pic {
+  max-width: 287.5px;
+  max-height: 171.875px;
+  margin: auto;
+  width: 100%;
+}
+
+.project > .col {
+  justify-content: space-between;
+}
+
+.project-name {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #fbb000;
+}
+
+.project-text {
+  line-height: 1.4;
+  padding-bottom: 5px;
+}
+
+.inline-flex {
+  display: inline-flex;
+  column-gap: 20px;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.inline-flex > a {
+  border: 1px solid #7E848F;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #484c55;
+  text-decoration: underline;
+  transition: 0.1s;
+}
+
+.inline-flex > a:hover {
+  background-color: #373a40;
+}
+
+.fa-lg {
+  padding-left: 5px;
+  vertical-align: -.09em!important;
+}
+
+.fa-brands {
+  padding-left: 5px;
+}
+
+/* card-three end */
+
+/* card-four start */
+
+.contact-card {
+  max-height: 204px;
+  min-height: 187px;
+  background-color: #111932;
+  border-top: 2px solid #7E848F;
+  align-items: center;
+  box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
+}
+
+#card-four {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 880px;
+
+}
+
+#contact-word {
+  text-decoration: none;
+}
+
+.mail-icon, .linkedin-icon, .git-icon {
+  font-size: 6rem!important;
+  line-height: 1 !important;
+  vertical-align: 0 !important;
+  transition: 0.3s;
+}
+
+.mail-icon:hover, .linkedin-icon:hover, .git-icon:hover {
+  font-size: 6.5rem!important;
+}
+
+/* card-four end */
+
+/* resume-page */
+
+#resume-pic {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#resume-pic > img {
+    max-width: 100%;
+    max-height: 85vh;
+}
+
+/* resume-page end*/
+
+@media (max-width: 740px) {
+
+  .skills-subject {
+    font-size: 1.2rem;
+  }
+
+  #prog-list, #web-list, #other-list {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 686px) {
+
+  #card-one {
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  #card-two {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #card-three {
+    margin-top: 1.2rem;
+  }
+
+  .skills-subject {
+    flex-direction: column-reverse;
+  }
+
+}
+
+@media (max-width: 656px) {
+
+  .project-pic {
+    order: 1;
+  }
+
+  .project {
+    row-gap: 15px;
+  }
+
+  .project > .col {
+    row-gap: 5px;
+  }
+
+  .mail-icon, .linkedin-icon, .git-icon {
+    font-size: 5rem!important;
+  }
+
+  .mail-icon:hover, .linkedin-icon:hover, .git-icon:hover {
+    font-size: 5.5rem!important;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  #name-logo {
+    font-size: 1.8rem;
+  }
+
+  #skills {
+    justify-content: space-between;
+  }
+
+  .skills-subject {
+    flex-direction: row;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  #nav-items {
+    display: none;
+  }
+
+  #hey {
+    font-size: 1.6rem;
+  }
+
+}
+
+@media (max-width: 440px) {
+  .skills-col {
+    margin-inline-start: 1rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .skills-col {
+    margin-inline-start: 0;
+  }
+
+  .inline-flex {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 310px) {
+  .skills-subject {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .skills-subject > .fa-solid {
+    margin-inline-start: 1rem;
+  }
+
+  .mail-icon, .linkedin-icon, .git-icon {
+    font-size: 4rem!important;
+  }
+  
+  .mail-icon:hover, .linkedin-icon:hover, .git-icon:hover {
+    font-size: 4.5rem!important;
+  }
+
+}

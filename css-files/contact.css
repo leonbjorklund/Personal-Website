@@ -1,0 +1,77 @@
+#form-card {
+  max-width: 600px;
+  margin: 2rem auto 2rem auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-container {
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #1d2e5c;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+}
+
+#form-title {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  pointer-events: none;
+  text-decoration: underline;
+}
+
+form input, form textarea {
+  max-width: 300px;
+  font-size: 1.5rem;
+  border: 0;
+  margin: 10px 0;
+  padding: 5px;
+  outline: none;
+  color: black;
+}
+
+form button {
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  background-color: #171e31;
+  width: 200px;
+  border: solid 2px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #101523;
+}
+
+
+#contact-icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-elements {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}

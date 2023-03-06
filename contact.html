@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Leon Björklund</title>
+    <link rel="stylesheet" href="./css-files/styling.css"/>
+    <link rel="stylesheet" href="./css-files/contact.css"/>
+    <link rel="stylesheet" href="./css-files/hamburger-effect.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@700&family=Poppins:wght@500&family=Staatliches&display=swap" rel="stylesheet"/>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+
+    <div class="hamburger-full">
+      <div class="cross-button"><i class="fa-solid fa-xmark fa-2xl"></i></div>
+
+      <div class="hamburger-flexbox">
+        <a href="index.html"><div class="hamburger-item">Home</div></a>
+        <a href="projects.html"><div class="hamburger-item">Projects</div></a>
+        <a href="resume.html"><div class="hamburger-item">Resume</div></a>
+        <a href="contact.html"><div class="hamburger-item">Contact</div></a>
+      </div>
+    </div>
+
+  <header>
+    
+    <div id="header-bar">
+      <a href="index.html"><div id="name-logo">Leon Björklund</div></a>
+      <div id="nav-items">
+        <a href="index.html" id="home-link"><div class="nav-item">Home</div></a>
+        <a href="index.html" id="projects-link"><div class="nav-item">Projects</div></a>
+        <a href="resume.html"><div class="nav-item">Resume</div></a>
+        <a id="contact-link"><div class="nav-item">Contact</div></a>
+      </div>
+      <div id="hamburger-button">
+        <i class="fa-solid fa-bars fa-2xl"></i>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+
+  <div class="card" id="form-card">
+    <div class="form-container">
+  <form class="gform pure-form pure-form-stacked my-form" method="POST" data-email="leon.bjorklund@gmail.com"
+  action="https://script.google.com/macros/s/AKfycbxhHjGRNGR8Cfb83daJQyJJ6jNFjhiChrHTTaQlXxxMZr9_ryPgxKIwuNOPbsG4WkTYAw/exec">
+    <div class="form-elements">
+      
+        <div id="form-title">Contact me!</div>
+        
+         <div>Name</div>
+        <input type="text" name="name" required="">
+
+        <div>Email</div>
+        <input type="email" name="email" required="">
+
+         <div>Phone</div>
+         <input type="number" name="phone">
+      
+        <div>Message</div>
+        <textarea  name="message" rows="5" cols="22" required=""></textarea><br>
+    
+        <button id="send-button">Send</button>
+      </div>
+    </form>
+   
+  </div>
+</div>
+
+
+  <script data-cfasync="false" type="text/javascript">
+    
+   (function() {
+  function validEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  }
+
+  function validateHuman(honeypot) {
+    if (honeypot) {
+      console.log("Robot Detected!");
+      return true;
+    } else {
+      console.log("Welcome Human!");
+    }
+  }
+  function getFormData(form) {
+    var elements = form.elements;
+
+    var fields = Object.keys(elements).filter(function(k) {
+          return (elements[k].name !== "honeypot");
+    }).map(function(k) {
+      if(elements[k].name !== undefined) {
+        return elements[k].name;
+      }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+      }
+    }).filter(function(item, pos, self) {
+      return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+      var element = elements[name];
+      formData[name] = element.value;
+      if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+          var item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(', ');
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "Sheet1"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    console.log(formData);
+    return formData;
+  }
+
+  function handleFormSubmit(event) {  
+    const submitButton = document.getElementById("send-button");
+    event.preventDefault();           
+    var form = event.target;
+    var data = getFormData(form);         
+    if( data.email && !validEmail(data.email) ) {   
+      var invalidEmail = form.querySelector(".email-invalid");
+      if (invalidEmail) {
+        invalidEmail.style.display = "block";
+        return false;
+      }
+    } else {
+      
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          console.log(xhr.status, xhr.statusText);
+          console.log(xhr.responseText);
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "flex"; // hide form
+            submitButton.innerText = "Sent!";
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
+          return;
+      };
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+    form.reset();
+  }
+  
+  function loaded() {
+    console.log("Contact form submission handler loaded successfully.");
+    var forms = document.querySelectorAll("form.gform");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+  }
+})();
+
+
+  </script>
+
+
+
+
+
+
+
+
+  <div id="contact-icons"> 
+        <div><a href="https://www.linkedin.com/in/leonbjorklund/" target="_blank"><i class="fa-brands fa-2xl linkedin-icon fa-linkedin"></i></a></div>
+        <div><a href="https://github.com/leonbjorklund" target="_blank"><i class="fa-brands fa-2xl git-icon fa-github"></i></a></div>
+  </div>
+
+
+</main>
+</body>
+
+</html>
