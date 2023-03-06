@@ -166,6 +166,7 @@ main {
 .sections-word {
   font-size: 2.3rem;
   text-align: center;
+  text-shadow: 2px 2px 4px #000;
 }
 
 #projects-col {
@@ -179,17 +180,20 @@ main {
   padding: 15px;
   background-color: #1d2e5c;
   column-gap: 30px;
+  align-items: center;
 }
 
 .project-pic {
   max-width: 287.5px;
   max-height: 171.875px;
-  margin: auto;
   width: 100%;
 }
 
 .project > .col {
   justify-content: space-between;
+  align-items: center;
+  min-height: 170px;
+  width: 550px;
 }
 
 .project-name {
@@ -198,11 +202,13 @@ main {
   font-size: 1.5rem;
   line-height: 1.2;
   color: #fbb000;
+  text-align: center;
 }
 
 .project-text {
   line-height: 1.4;
   padding-bottom: 5px;
+  padding-left: 20px;
 }
 
 .inline-flex {
@@ -338,6 +344,7 @@ main {
 
   .project-pic {
     order: 1;
+    margin: auto;
   }
 
   .project {
@@ -366,6 +373,7 @@ main {
 
   #skills {
     justify-content: space-between;
+    padding-left: 40px;
   }
 
   .skills-subject {
