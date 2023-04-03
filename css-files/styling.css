@@ -144,7 +144,7 @@ main {
 }
 
 #prog-list, #web-list, #other-list {
-  margin-inline-start: 1.5rem;
+  margin-inline-start: 1.2rem;
   font-size: 1.1rem;
 }
 
@@ -193,7 +193,6 @@ main {
   justify-content: space-between;
   align-items: center;
   min-height: 170px;
-  width: 550px;
 }
 
 .project-name {
@@ -223,7 +222,6 @@ main {
   padding: 3px;
   border-radius: 5px;
   background-color: #484c55;
-  text-decoration: underline;
   transition: 0.1s;
 }
 
@@ -232,11 +230,13 @@ main {
 }
 
 .fa-lg {
+  font-size: 1.1em!important;
   padding-left: 5px;
   vertical-align: -.09em!important;
 }
 
 .fa-brands {
+  font-size: 1.4em;
   padding-left: 5px;
 }
 
@@ -290,15 +290,45 @@ main {
 /* resume-page */
 
 #resume-pic {
-  padding: 20px;
+  padding: 20px 10px 10px 10px;
   display: flex;
+  flex-direction: column;
+  /* align-items: center; */
   justify-content: center;
 }
 
 #resume-pic > img {
     max-width: 100%;
     max-height: 85vh;
+    align-self: center;
+    margin-bottom: 5px;
 }
+
+#resume-link {
+  display: flex;
+  align-items: center;
+  width: 547.74px;
+  align-self: center;
+}
+
+#download-pdf {
+    border: 1px solid #7E848F;
+    padding: 3px;
+    border-radius: 5px;
+    /* background-color: #484c55; */
+    background-color: #111932;
+    transition: 0.1s;
+    margin-right: 5px;
+}
+
+#download-pdf:hover {
+  background-color: #373a40;
+}
+
+.fa-download {
+  font-size: 2rem!important;
+}
+
 
 /* resume-page end*/
 
@@ -380,6 +410,11 @@ main {
     flex-direction: row;
   }
 
+  #resume-link {
+    width: 100%;
+  }
+
+
 }
 
 @media (max-width: 520px) {
@@ -425,7 +460,7 @@ main {
   .mail-icon, .linkedin-icon, .git-icon {
     font-size: 4rem!important;
   }
-  
+
   .mail-icon:hover, .linkedin-icon:hover, .git-icon:hover {
     font-size: 4.5rem!important;
   }
